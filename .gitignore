@@ -2,5 +2,6 @@
 bin
 obj
 py-codes
-
 *.user
+*.out
+*.o

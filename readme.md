@@ -1,4 +1,23 @@
-﻿# Unidecode.NET
+# Unidecode.NET-fork
+
+Due to strange memory issues, application consumed 150M+ when using the library in docker container.
+The lookup table has been translated to native C-code.
+
+## Compile
+
+## Clang
+
+```bash
+clang -O2 unidecode_native.c -shared -fPIC -o src/unidecode_native.so
+```
+
+## GCC
+
+```bash
+gcc -O2 unidecode_native.c -shared -fPIC -o src/unidecode_native.so
+```
+
+# Unidecode.NET
 
 [![Build status](https://img.shields.io/github/workflow/status/thecoderok/Unidecode.NET/default)](https://github.com/thecoderok/Unidecode.NET/actions?query=workflow%3Adefault)
 [![NuGet](https://img.shields.io/nuget/v/Unidecode.NET.svg)](https://www.nuget.org/packages/Unidecode.NET)

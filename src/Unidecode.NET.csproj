@@ -8,7 +8,6 @@
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <Description>Unidecode.NET returns transliterated string</Description>
-    <TargetFrameworks>netstandard1.2;netstandard2.0;netstandard2.1</TargetFrameworks>
     <VersionPrefix>2.1.0</VersionPrefix>
     <PackageTags>text;unicode;seo</PackageTags>
     <RepositoryType>git</RepositoryType>
@@ -18,5 +17,12 @@
     <IncludeSource>true</IncludeSource>
     <SymbolPackageFormat>snupkg</SymbolPackageFormat>
     <NoWarn>1591</NoWarn>
+    <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
+  <ItemGroup>
+    <None Remove="unidecode_native.so" />
+    <Content Include="unidecode_native.so">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
 </Project>

@@ -42,10 +42,8 @@ namespace Unidecode.NET
                 {
                     var high = c >> 8;
                     var low = c & 0xff;
-                    if (characters.TryGetValue(high, out var transliterations))
-                    {
-                        sb.Append(transliterations[low]);
-                    }
+                    
+                    sb.Append(UnicodeTable.Lookup(high, low));
                 }
             }
 
@@ -71,7 +69,7 @@ namespace Unidecode.NET
             {
                 var high = c >> 8;
                 var low = c & 0xff;
-                result = characters.TryGetValue(high, out var transliterations) ? transliterations[low] : "";
+                result = UnicodeTable.Lookup(high, low);
             }
 
             return result;
